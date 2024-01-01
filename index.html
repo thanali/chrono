@@ -11,7 +11,41 @@
 <body>
   <header>Chronomètre</header>
 
-  <main></main>
+  <main>
+    <section class="timer">
+      <div class="time">
+        <span class="main-time">00:00:00</span>
+        <span class="min-sec">.00</span>
+      </div>
+      <button class="start">Start</button>
+      <button class="stop">Stop</button>
+      <button class="continue">Continue</button>
+      <button class="split">Split</button>
+      <button class="reset">Reset</button>
+    </section>
+
+    <section class="time-saved">
+      <table>
+        <thead>
+          <tr>
+            <th>+/-</th>
+            <th>Time</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <td><button class="export">Export</button></td>
+        </tfoot>
+        <tbody>
+          <tr>
+            <td><button class="time-sup">x</button></td>
+            <td><input class="time-stop" type="text" value="00:00:00.00"></td>
+            <td><input class="time-note" type="text" size="40"></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
 
   <footer></footer>
 
