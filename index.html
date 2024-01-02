@@ -16,7 +16,7 @@
 
   <main>
     <section class="timer">
-      <div id="time">0</div>
+      <div id="time">00:00:00</div>
       <div class="buttons">
         <button class="start">Start</button>
         <button class="stop">Stop</button>
@@ -55,3 +55,22 @@
 </body>
 
 </html>
+
+
+
+
+<!--
+let sec = 0
+let min = 0
+
+let time = document.getElementById("time")
+
+let chrono = window.setInterval(tic, 1000)
+
+function tic() {
+sec++
+time.innerHTML = sec
+if (sec === 60) {
+sec = 0
+}
+} -->
