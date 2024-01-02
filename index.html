@@ -9,19 +9,21 @@
 </head>
 
 <body>
-  <header>Chronomètre</header>
+
+  <header>
+    <h1>Chronomètre</h1>
+  </header>
 
   <main>
     <section class="timer">
-      <div class="time">
-        <span class="main-time">00:00:00</span>
-        <span class="min-sec">.00</span>
+      <div id="time">0</div>
+      <div class="buttons">
+        <button class="start">Start</button>
+        <button class="stop">Stop</button>
+        <button class="continue">Continue</button>
+        <button class="split">Split</button>
+        <button class="reset">Reset</button>
       </div>
-      <button class="start">Start</button>
-      <button class="stop">Stop</button>
-      <button class="continue">Continue</button>
-      <button class="split">Split</button>
-      <button class="reset">Reset</button>
     </section>
 
     <section class="time-saved">
