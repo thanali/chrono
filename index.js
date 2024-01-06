@@ -1,12 +1,53 @@
+const time = document.getElementById("time")
+const btnStartStop = document.querySelector(".start-stop")
+const btnReset = document.querySelector(".reset")
+const btnSplit = document.querySelector(".split")
+const lapContainer = document.querySelector(".lap-container")
+
 let sec = 0
 let min = 0
 let hour = 0
+let splitLap = 0
+let timing
+let paused = true
 
-const time = document.getElementById("time")
+const runIt = () => {
+  if (paused) {
+    paused = false
+    btnStartStop.textContent = "Stop"
+    btnReset.disabled = true
+    tictac()
+  } else if (!paused) {
+    paused = true
+    btnStartStop.textContent = "Start"
+    btnReset.disabled = false
+    clearTimeout(timing)
+  }
+}
 
-const chrono = window.setInterval(tic, 1000)
+const resetIt = () => {
+  time.textContent = "00:00:00"
+  paused = true
+  hour = 0
+  min = 0
+  sec = 0
+  splitLap = 0
+  lapContainer.textContent = ""
+  clearTimeout(timing)
+}
 
-function tic() {
+const splitIt = () => {
+  const lap = document.createElement("li")
+  lap.setAttribute("class", "lap-item")
+
+  splitLap++
+  lap.textContent = `${splitLap} : ${time.innerHTML}`
+  lapContainer.append(lap)
+}
+
+const tictac = () => {
+  if (paused) return
+
   sec = parseInt(sec)
   min = parseInt(min)
   hour = parseInt(hour)
@@ -22,15 +63,14 @@ function tic() {
     min = 0
   }
 
-  if (sec < 10) {
-    sec = "0" + sec
-  }
-  if (min < 10) {
-    min = "0" + min
-  }
-  if (hour < 10) {
-    hour = "0" + hour
-  }
+  if (sec < 10) sec = "0" + sec
+  if (min < 10) min = "0" + min
+  if (hour < 10) hour = "0" + hour
 
-  time.innerHTML = `${hour}:${min}:${sec}`
+  time.textContent = `${hour}:${min}:${sec}`
+  timing = setTimeout(tictac, 100)
 }
+
+btnStartStop.addEventListener("click", runIt)
+btnReset.addEventListener("click", resetIt)
+btnSplit.addEventListener("click", splitIt)

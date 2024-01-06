@@ -52,6 +52,13 @@ button {
   gap: 1rem;
   flex-wrap: wrap;
 }
-.time-saved {
-  display: none;
+.lap-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.lap-item {
+  list-style-type: none;
 }
