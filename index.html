@@ -3,15 +3,17 @@
 
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" href="./assets/stop-watch_6179760.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Chrono</title>
+  <title>Vanilla Stopwatch</title>
 </head>
 
 <body>
 
   <header>
-    <h1>Chronomètre</h1>
+    <img class="stopwatch" src="./assets/stop-watch_6179760.png" alt="stopwatch">
+    <h1>Vanilla Stopwatch</h1>
   </header>
 
   <main>
@@ -22,13 +24,7 @@
         <button class="split">Split</button>
         <button class="reset">Reset</button>
       </div>
-      <ul class="lap-container">
-        <li class="lap-item">1 : 00:00:00</li>
-        <li class="lap-item">1 : 00:00:00</li>
-        <li class="lap-item">1 : 00:00:00</li>
-        <li class="lap-item">1 : 00:00:00</li>
-        <li class="lap-item">1 : 00:00:00</li>
-      </ul>
+      <ul class="lap-container"></ul>
     </section>
   </main>
 
@@ -38,22 +34,3 @@
 </body>
 
 </html>
-
-
-
-
-<!--
-let sec = 0
-let min = 0
-
-let time = document.getElementById("time")
-
-let chrono = window.setInterval(tic, 1000)
-
-function tic() {
-sec++
-time.innerHTML = sec
-if (sec === 60) {
-sec = 0
-}
-} -->

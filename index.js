@@ -7,19 +7,22 @@ const lapContainer = document.querySelector(".lap-container")
 let sec = 0
 let min = 0
 let hour = 0
-let splitLap = 0
 let timing
 let paused = true
+let splitLap = 0
+let laps = []
 
 const runIt = () => {
   if (paused) {
     paused = false
     btnStartStop.textContent = "Stop"
+    btnStartStop.style.backgroundColor = "#df7e83"
     btnReset.disabled = true
     tictac()
   } else if (!paused) {
     paused = true
     btnStartStop.textContent = "Start"
+    btnStartStop.style.backgroundColor = "#87c2b1"
     btnReset.disabled = false
     clearTimeout(timing)
   }
@@ -37,12 +40,17 @@ const resetIt = () => {
 }
 
 const splitIt = () => {
+  const currentLap = time.textContent
   const lap = document.createElement("li")
   lap.setAttribute("class", "lap-item")
 
-  splitLap++
-  lap.textContent = `${splitLap} : ${time.innerHTML}`
-  lapContainer.append(lap)
+  if (!laps.includes(currentLap)) {
+    splitLap++
+    lap.textContent = `${splitLap} : ${time.textContent}`
+    lapContainer.append(lap)
+
+    laps.push(currentLap)
+  }
 }
 
 const tictac = () => {
