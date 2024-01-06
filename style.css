@@ -16,16 +16,13 @@ body {
   color: var(--text);
   background-color: var(--background);
 }
-
 header {
   display: flex;
   align-items: center;
 }
-
 h1 {
   font-size: 1.1rem;
 }
-
 button {
   padding: 0.6rem 0.9rem;
   font-size: 1.2rem;
@@ -33,7 +30,21 @@ button {
   border-radius: 5px;
   box-shadow: 2px 2px 7px 0px rgba(116, 90, 130, 0.2);
 }
-
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1.4rem;
+  align-items: center;
+  padding: 2rem;
+}
+a {
+  text-decoration: none;
+  color: var(--text);
+}
+/* Logo */
 .stopwatch {
   width: 40px;
   height: 40px;
@@ -45,6 +56,7 @@ button {
   flex-direction: column;
   gap: 2.5rem;
 }
+/* Time display */
 #time {
   font-size: 18vw;
   display: flex;
@@ -78,6 +90,11 @@ button {
 .lap-item {
   list-style-type: none;
   font-size: 1.4rem;
+}
+/* Button footer */
+.code {
+  background-color: #c798e0;
+  border: none;
 }
 
 @media screen and (min-width: 800px) {
