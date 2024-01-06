@@ -76,7 +76,7 @@ const tictac = () => {
   if (hour < 10) hour = "0" + hour
 
   time.textContent = `${hour}:${min}:${sec}`
-  timing = setTimeout(tictac, 100)
+  timing = setTimeout(tictac, 1000)
 }
 
 btnStartStop.addEventListener("click", runIt)
